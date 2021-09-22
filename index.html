@@ -19,9 +19,9 @@
     <header>
         <div class="contenedor">
             <nav class="menu">
-                <a href="#">Acerca de</a>
-                <a href="#">Trabajos</a>
-                <a href="#">Contacto</a>
+                <a href="#acerca-de">Acerca de</a>
+                <a href="#trabajos">Trabajos</a>
+                <a href="#contacto">Contacto</a>
             </nav>
 
             <div class="contenedor-texto">
@@ -34,7 +34,7 @@
     </header>
 
     <section class="main">
-        <section class="acerca-de">
+        <section class="acerca-de" id="acerca-de">
             <div class="contenedor">
                 <div class="foto">
                     <img src="img/boris.jpg" width="115" height="115" alt="Boris Alarcon">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </section>
-        <section class="trabajos">
+        <section class="trabajos" id="trabajos">
             <div class="contenedor">
                 <h3 class="titulo">Proyectos</h3>
                 <div class="contenedor-trabajos">
@@ -94,10 +94,10 @@
     </section>
 
     <footer>
-        <section class="contacto">
+        <section class="contacto" id="contacto">
             <div class="contenedor">
                 <h3 class="titulo">Contacto</h3>
-                <form action="" class="formulario">
+                <form id="form" class="formulario" action="https://formspree.io/f/xayavakz" method="POST">
                     <input type="text" placeholder="Nombre" name="nombre" required>
                     <input type="email" placeholder="Correo" name="correo" required>
                     <textarea name="mensaje" placeholder="mensaje"></textarea>
@@ -114,6 +114,28 @@
             </div>
         </section>
     </footer>
+
+    <script>
+        const $form = document.querySelector('#form')
+        
+        $form.addEventListener('submit', handlesubmit)              
+
+        async function handlesubmit(event){
+            event.preventDefault()
+            const form = new FormData(this)
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: form,
+                headers: {
+                    'Accept' : 'application/json'
+                }
+            })
+            if(response.ok){
+                this.reset
+                alert('Gracias por contactarme, te escribire pronto')
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -40,6 +40,7 @@ header .menu a{
     text-decoration: none;
     border-bottom: 2px solid transparent;
     font-size: 1em;
+    font-weight: 600;
 }
 
 header .menu a:hover{
@@ -51,9 +52,13 @@ header .contenedor-texto {
     justify-content: center;
     align-items: center;
     margin: 190px 0;
+    
 }
+
+
 header .contenedor-texto .texto {
-    border: 2px solid rgba(255,255,255,0.5);
+    /* rgba(255,255,255,0.5); */
+    border: 5px solid #fff;
     border-radius: 3px;
     display: inline-block;
     text-align: center;
@@ -63,8 +68,8 @@ header .contenedor-texto .texto {
 header .contenedor-texto .texto h1,
 header .contenedor-texto .texto h2 {
     color: #fff;    
-    font-weight: 300;
-    margin: 0;
+    font-weight: 600;
+    margin: 0;    
 }
 
 header .contenedor-texto .texto .nombre{
